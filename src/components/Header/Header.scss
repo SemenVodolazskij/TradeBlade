@@ -1,0 +1,194 @@
+.header {
+  background: rgba(3, 7, 24, 1);
+  padding: 12px 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__logo img {
+    height: 64px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 32px;
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 14px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      transition: opacity 0.2s, transform 0.2s ease;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid rgba(87, 225, 255, 1);
+      color: rgba(87, 225, 255, 1);
+      transition: 0.2s, transform 0.2s ease;
+
+      &.register {
+        background: rgba(87, 225, 255, 1);
+        color: rgba(3, 7, 24, 1);
+        border-color: rgba(87, 225, 255, 1);
+      }
+
+      &.login {
+        box-shadow: 0px 0px 4px 0px rgba(87, 225, 255, 1);
+      }
+
+      &:hover {
+        opacity: 0.85;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  /* ------------------------------ */
+  /* MOBILE BURGER */
+  /* ------------------------------ */
+
+  &__burger {
+    width: 26px;
+    height: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: #fff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+  }
+
+  /* ------------------------------ */
+  /* MOBILE MENU */
+  /* ------------------------------ */
+
+  &__mobile {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+    background: rgba(87, 82, 255, 1);
+    z-index: 50;
+    padding: 32px;
+    animation: fadeIn 0.3s ease;
+
+    &-close {
+      color: #fff;
+      font-size: 28px;
+      text-align: right;
+      cursor: pointer;
+      margin-bottom: 40px;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 24px;
+        text-transform: uppercase;
+        opacity: 0.9;
+        transition: opacity 0.2s, transform 0.2s ease;
+
+        &:hover {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .mobile__actions {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+
+      .btn {
+        width: 100%;
+        height: 52px;
+        padding: 8px 18px;
+        border-radius: 2px;
+        font-size: 16px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid rgba(87, 225, 255, 1);
+        color: rgba(87, 225, 255, 1);
+        transition: 0.2s, transform 0.2s ease;
+
+        &.register {
+          background: rgba(87, 225, 255, 1);
+          color: rgba(3, 7, 24, 1);
+          border-color: rgba(87, 225, 255, 1);
+        }
+
+        &.login {
+          box-shadow: 0px 0px 4px 0px rgba(87, 225, 255, 1);
+        }
+
+        &:hover {
+          opacity: 0.85;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ------------------------------ */
+  /*  MEDIA  */
+  /* ------------------------------ */
+
+  @media (max-width: 1060px) {
+    &__nav,
+    &__actions {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+
+    &__mobile.active {
+      display: block;
+    }
+  }
+}

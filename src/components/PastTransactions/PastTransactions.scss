@@ -1,0 +1,117 @@
+.deals-section {
+  height: 600px;
+  position: relative;
+  padding: 40px 0;
+  background: #030617;
+  color: #fff;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+
+    background: #ffffff;
+    clip-path: polygon(0 0, 40% 0, 45% 100%, 0 100%);
+  }
+}
+
+.deals-title {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.deals-online {
+  color: rgba(53, 255, 158, 1);
+  margin-bottom: 72px;
+}
+
+.deal-card {
+  position: relative;
+  width: 300px;
+  height: 208px;
+  background: rgba(106, 84, 255, 1);
+  border-radius: 14px;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.deal-bg-icon {
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  width: 160px;
+  height: 160px;
+  opacity: 0.2;
+  background-image: url("../../assets/icons/icons-past-transactions.svg"); // заменишь
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.deal-pair {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.deal-type {
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.deal-label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.deal-profit {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.deal-tooltip {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.deal-date {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/*----------------------*/
+/* Swiper custom styles */
+/*----------------------*/
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex !important;
+}
+
+.swiper-slide {
+  width: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.deals-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(67, 79, 112, 1);
+  border-radius: 999px;
+  margin-top: 20px;
+  overflow: hidden;
+
+  .progress-bar {
+    height: 100%;
+    background: rgba(96, 115, 161, 1);
+    border-radius: inherit;
+    transition: width 0.2s ease;
+  }
+}

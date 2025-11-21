@@ -1,0 +1,153 @@
+.hero {
+  position: relative;
+  background: rgba(3, 7, 24, 1);
+  padding: 80px 0 150px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+
+    background: #ffffff;
+    clip-path: polygon(0 0, 40% 0, 45% 100%, 0 100%);
+  }
+}
+
+.hero__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 550px;
+  z-index: 2;
+
+  h1 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .hero__subtitle {
+    color: rgba(231, 247, 248, 1);
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+}
+
+.hero__form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+
+  input {
+    flex: 1;
+    background: rgba(32, 26, 79, 1);
+    border: none;
+    color: #fff;
+    padding: 14px 18px;
+    font-size: 14px;
+    border-radius: 4px 0 0 4px;
+  }
+
+  button {
+    background: rgba(87, 225, 255, 1);
+    color: #030718;
+    padding: 14px 22px;
+    font-size: 14px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.hero__note {
+  display: block;
+  margin-top: 12px;
+  color: rgba(231, 247, 248, 0.6);
+  font-size: 12px;
+}
+
+.hero__image {
+  z-index: 3;
+
+  img {
+    width: 470px;
+    height: auto;
+  }
+}
+
+/* ------------------------------------- */
+/* -----------  Responsive   ----------- */
+/* ------------------------------------- */
+
+@media (max-width: 1000px) {
+  .hero__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero__note {
+    text-align: left;
+  }
+
+  .hero__image img {
+    width: 300px;
+    height: 134px;
+  }
+
+  .hero__image {
+    order: -1;
+  }
+
+  .hero__content h1 {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__content h1 {
+    font-size: 36px;
+    text-align: left;
+    justify-content: left;
+    display: flex;
+  }
+
+  .hero__subtitle {
+    text-align: left;
+  }
+
+  .hero__form {
+    flex-direction: column;
+
+    input,
+    button {
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  .hero::after {
+    height: 40px;
+    clip-path: polygon(0 0, 65% 0, 75% 100%, 0 100%);
+  }
+}
